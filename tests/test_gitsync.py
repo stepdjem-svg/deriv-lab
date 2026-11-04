@@ -6,7 +6,7 @@ from pathlib import Path
 from lab import gitsync
 from lab.journal import Journal
 
-TOKEN = "ghp_SECRETTOKEN123"
+TOKEN = "ghp_FAKE_TEST_0000"
 
 
 class GitSyncTests(unittest.TestCase):
