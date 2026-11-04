@@ -25,8 +25,10 @@ from dataclasses import dataclass
 
 import aiohttp
 import websockets
-from google.colab import userdata
-
+import os 
+pat = os.getenv("DERIV_PAT")
+app_id = os.getenv("DERIV_APP_ID")
+account_id = os.getenv("DERIV_ACCOUNT_ID")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("agent")
 
@@ -244,9 +246,9 @@ class Agent:
 
 
 async def main(cfg=Config(), max_duration_s=1800):
-    pat = userdata.get("DERIV_PAT")
-    app_id = userdata.get("DERIV_APP_ID")
-    account_id = userdata.get("DERIV_ACCOUNT_ID")
+    pat = os.getenv("DERIV_PAT")
+    app_id = os.getenv("DERIV_APP_ID")
+    account_id = os.getenv("DERIV_ACCOUNT_ID")
     deadline = time.time() + max_duration_s
     delay = 2
     while time.time() < deadline:
@@ -273,3 +275,7 @@ async def main(cfg=Config(), max_duration_s=1800):
 # In a Colab cell (A/B test, demo account, same market conditions for both arms):
 # await main(Config(dry_run=False, max_trades=200), max_duration_s=7200)
 # Read the two SUMMARY lines at the end. Trades are saved in /content/trades.csv
+
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(main())
