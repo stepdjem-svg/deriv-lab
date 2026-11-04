@@ -1,7 +1,7 @@
 import json, time
 from websocket import create_connection
 
-URLS = ["wss://api.derivws.com/trading/v1/options/ws/public",
+URLS = ["",
         "wss://ws.derivws.com/websockets/v3?app_id=1089",
         "wss://ws.binaryws.com/websockets/v3?app_id=1089"]
 
