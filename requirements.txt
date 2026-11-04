@@ -1,0 +1,4 @@
+# Only needed for the experiments/ and bot/ scripts (Colab already has them).
+# The lab/ package and its tests use the Python standard library only.
+websockets
+aiohttp
