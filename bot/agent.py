@@ -10,7 +10,7 @@
 #    Turn "Notebook access" on for each.
 # 4. Run:  !pip -q install websockets aiohttp   (usually preinstalled)
 #
-# SAFETY DEFAULTS: DRY_RUN=True (logs signals, places no trades),
+# SAFETY DEFAULTS: DRY_RUN=False (logs signals, places no trades),
 # demo only, stake cap, daily loss cap, trade cap, cooldown.
 
 import asyncio
@@ -40,15 +40,15 @@ class Config:
     duration_ticks: int = 5
     fast: int = 5                   # fast SMA window
     slow: int = 20                  # slow SMA window
-    max_trades: int = 10            # per run
-    max_daily_loss: float = 5.0     # stop when cumulative loss reaches this
-    cooldown_s: int = 30            # min seconds between trades
-    dry_run: bool = True            # True = never buys
+    max_trades: int = 700            # per run
+    max_daily_loss: float = 1000.0     # stop when cumulative loss reaches this
+    cooldown_s: int = 10            # min seconds between trades
+    dry_run: bool = False            # True = never buys
     allow_real: bool = False        # keep False; blocks real-money endpoint
     api_base: str = "https://api.derivws.com"
     strategy: str = "ab"            # "ab" (recommended A/B test), "sma", or "random"
-    max_consecutive_losses: int = 4 # stop after this many losses in a row
-    log_file: str = "/content/trades.csv"
+    max_consecutive_losses: int = 50 # stop after this many losses in a row
+    log_file: str = "/workspaces/deriv-lab/trades.csv"
 
 
 class DerivClient:
@@ -245,18 +245,22 @@ class Agent:
             self.summary()
 
 
-async def main(cfg=Config(), max_duration_s=1800):
+async def main(cfg=Config(), max_duration_s=36000):
     pat = os.getenv("DERIV_PAT")
     app_id = os.getenv("DERIV_APP_ID")
     account_id = os.getenv("DERIV_ACCOUNT_ID")
     deadline = time.time() + max_duration_s
     delay = 2
+    agent = None
     while time.time() < deadline:
         client = DerivClient(cfg, pat, app_id, account_id)
         try:
             await client.connect()
             delay = 2
-            agent = Agent(cfg, client)
+            if agent is None:
+                agent = Agent(cfg, client)
+            else:
+                agent.c = client
             await asyncio.wait_for(agent.run(), timeout=max(1, deadline - time.time()))
             break  # finished normally (limits hit)
         except (asyncio.TimeoutError, ConnectionError, websockets.ConnectionClosed, aiohttp.ClientError) as e:
@@ -273,8 +277,8 @@ async def main(cfg=Config(), max_duration_s=1800):
     log.info("Agent stopped.")
 
 # In a Colab cell (A/B test, demo account, same market conditions for both arms):
-# await main(Config(dry_run=False, max_trades=200), max_duration_s=7200)
-# Read the two SUMMARY lines at the end. Trades are saved in /content/trades.csv
+# await main(Config(dry_run=False, max_trades=500), max_duration_s=18000)
+# Read the two SUMMARY lines at the end. Trades are saved in /workspaces/deriv-lab/trades.csv
 
 if __name__ == "__main__":
     import asyncio
