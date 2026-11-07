@@ -62,15 +62,17 @@ Ne te contente pas de mémoriser cette instruction : applique-la dans tes décis
 Notre objectif n’est pas simplement de construire un bot. Notre objectif est de découvrir un avantage statistique réel, puis de construire le meilleur système possible pour l’exploiter de manière disciplinée.
 <!-- AUTO:START -->
 Expériences pré-enregistrées (journal) :
-- (aucune)
+- P001 Mean reversion on WLD baskets with a 1-tick entry delay : not_supported (R003)
+- P002 Next-candle direction predictability (lagged returns) on Deriv real markets : not_supported (R001)
+- P003 Intraday momentum on indices and metals : not_supported (R002)
 
 Derniers commits :
 ```
+32c67f0 UPDATE MD: handoff (AUTO block), autolab, probe; ignore local data
 270f193 UPDATE MD: handoff via lab.handoff (AUTO block, research log)
 d9f97f2 run_bot: logging, verrou, arrêt propre, garde compte démo
 2b7a031 feat: ajout du script permanent run_bot.py pour l'orchestration du bot Deriv
 3fadad8 add run_judge
-910fd0a Bot demo run finished (700 trades), ignore logs and backups
 ```
 
 Prochaines tâches :
