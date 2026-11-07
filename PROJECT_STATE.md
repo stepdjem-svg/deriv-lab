@@ -65,14 +65,15 @@ Expériences pré-enregistrées (journal) :
 - P001 Mean reversion on WLD baskets with a 1-tick entry delay : not_supported (R003)
 - P002 Next-candle direction predictability (lagged returns) on Deriv real markets : not_supported (R001)
 - P003 Intraday momentum on indices and metals : not_supported (R002)
+- P004 Forex session continuation: Asia direction predicts London direction : not_supported (R004)
 
 Derniers commits :
 ```
+0d0061e close autolab research line: not_supported
 32c67f0 UPDATE MD: handoff (AUTO block), autolab, probe; ignore local data
 270f193 UPDATE MD: handoff via lab.handoff (AUTO block, research log)
 d9f97f2 run_bot: logging, verrou, arrêt propre, garde compte démo
 2b7a031 feat: ajout du script permanent run_bot.py pour l'orchestration du bot Deriv
-3fadad8 add run_judge
 ```
 
 Prochaines tâches :

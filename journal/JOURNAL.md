@@ -25,6 +25,13 @@ Generated from journal.jsonl (append-only). Do not edit by hand.
 - result R002 (run autolab): `{"acc": 0.5152, "sessions": 792, "z_vs_hurdle": -1.91}`
 - notes: see FINAL_SUMMARY.txt
 
+### P004 - Forex session continuation: Asia direction predicts London direction  [not_supported]
+*2026-11-07T12:25:10Z* - The Asia-session move on forex 1h candles predicts the London-session move beyond the 54.9% hurdle.
+- rule: `{"bet": "London continues Asia", "hurdle": 0.549, "markets": "forex (frx*) 1h candles, cached", "pooled": true, "signal": "sign of Asia return = close(06:00 UTC bar) - open(00:00 UTC bar)", "split": "first 50% / last 50% of days", "target": "sign of London return = close(11:00 UTC bar) - open(07:00 UTC bar)", "tie": "loss"}`
+- criteria: `{"candidate_if": "pooled accuracy >= hurdle AND z_vs_hurdle >= 3 AND accuracy >= hurdle in BOTH halves", "else": "not_supported", "note": "candidate only; confirm on fresh data"}`
+- result R004 (run session_continuation): `{"acc": 0.5223, "days": 5131, "halves": [0.5127, 0.5319], "z": -3.84}`
+- notes: see stdout
+
 ## Notes and decisions
 
 - N001 (2026-11-05T11:21:13Z): A/B 700 trades 1HZ100V: SMA 161/358 (45.0%), random 167/342 (48.8%), break-even 52.63%. SMA vs random z -1.02. Aucun avantage detecte. P&L -76.80 USD (demo). Regle fixee a lavance, non reinterpretee.
