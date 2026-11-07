@@ -4,7 +4,7 @@ Free, private research lab for Deriv **demo** experiments. Phase 1: persistence,
 
 ## Layout
 - `lab/` persistence (`storage`), pre-registered journal (`journal`), git sync (`gitsync`), Colab setup (`colab`), checks (`selftest`)
-- `experiments/` the scripts from earlier work, unchanged (audit, contracts, candles, structure, followup, forward_test, scan)
+- `experiments/` the scripts from earlier work, unchanged (audit, contracts, candles, structure, followup, forward_test, scan, autolab, session_continuation, overreaction = P005)
 - `bot/` the demo trading bot (needs a Deriv token, DEMO only) and `bot/archive/` older versions
 - `journal/` `seed.jsonl` (earlier experiments), plus `journal.jsonl` and `JOURNAL.md` after the first sync
 - `tests/` run with `python -m unittest discover -s tests -v`

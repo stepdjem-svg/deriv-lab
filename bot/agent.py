@@ -10,7 +10,7 @@
 #    Turn "Notebook access" on for each.
 # 4. Run:  !pip -q install websockets aiohttp   (usually preinstalled)
 #
-# SAFETY DEFAULTS: DRY_RUN=False (logs signals, places no trades),
+# SAFETY DEFAULTS: dry_run=False => PLACES TRADES (demo account only); set dry_run=True to only log signals.
 # demo only, stake cap, daily loss cap, trade cap, cooldown.
 
 import asyncio
