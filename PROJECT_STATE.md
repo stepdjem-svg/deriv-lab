@@ -69,11 +69,11 @@ Expériences pré-enregistrées (journal) :
 
 Derniers commits :
 ```
+f8f1a87 P004 session continuation: not_supported (52.2%, below 54.9% hurdle)
 0d0061e close autolab research line: not_supported
 32c67f0 UPDATE MD: handoff (AUTO block), autolab, probe; ignore local data
 270f193 UPDATE MD: handoff via lab.handoff (AUTO block, research log)
 d9f97f2 run_bot: logging, verrou, arrêt propre, garde compte démo
-2b7a031 feat: ajout du script permanent run_bot.py pour l'orchestration du bot Deriv
 ```
 
 Prochaines tâches :
