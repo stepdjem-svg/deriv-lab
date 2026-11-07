@@ -66,11 +66,11 @@ Expériences pré-enregistrées (journal) :
 
 Derniers commits :
 ```
+270f193 UPDATE MD: handoff via lab.handoff (AUTO block, research log)
 d9f97f2 run_bot: logging, verrou, arrêt propre, garde compte démo
 2b7a031 feat: ajout du script permanent run_bot.py pour l'orchestration du bot Deriv
 3fadad8 add run_judge
 910fd0a Bot demo run finished (700 trades), ignore logs and backups
-5534f57 Add judge + tests, wrap phase2 tests in TestCase
 ```
 
 Prochaines tâches :

@@ -7,3 +7,8 @@ data/
 .ipynb_checkpoints/
 *.bak*
 run.log
+
+# local data, never to GitHub
+data/
+deriv-lab-data/
+*.tmp
