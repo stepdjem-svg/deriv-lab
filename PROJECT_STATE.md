@@ -60,3 +60,22 @@ Cette mission doit figurer dans ton contexte permanent de travail et dans les fi
 Ne te contente pas de mémoriser cette instruction : applique-la dans tes décisions et dans tes actions.
 
 Notre objectif n’est pas simplement de construire un bot. Notre objectif est de découvrir un avantage statistique réel, puis de construire le meilleur système possible pour l’exploiter de manière disciplinée.
+<!-- AUTO:START -->
+Expériences pré-enregistrées (journal) :
+- (aucune)
+
+Derniers commits :
+```
+d9f97f2 run_bot: logging, verrou, arrêt propre, garde compte démo
+2b7a031 feat: ajout du script permanent run_bot.py pour l'orchestration du bot Deriv
+3fadad8 add run_judge
+910fd0a Bot demo run finished (700 trades), ignore logs and backups
+5534f57 Add judge + tests, wrap phase2 tests in TestCase
+```
+
+Prochaines tâches :
+- Lancer le test pré-enregistré sur de nouvelles données (plus de bougies) avant toute conclusion.
+- Momentum intraday indices 30 min / 1 h (seuil 54,9 %) : pas encore testé avec assez de données.
+- Contrats 1 jour : barrière à vérifier (longcode) avant tout calcul de gain.
+- Proposer la prochaine expérience à partir des résultats du journal ; ne pas répéter un test sans justification.
+<!-- AUTO:END -->
