@@ -27,7 +27,9 @@ Décisions : DECISIONS.md. Journal détaillé : journal/JOURNAL.md (généré, n
 - Bot démo : bot/agent.py (SMA vs contrôle aléatoire). Non relancé sans nouvelle hypothèse pré-enregistrée.
 """
 
-NEXT = """- Lancer le test pré-enregistré sur de nouvelles données (plus de bougies) avant toute conclusion.
+NEXT = """- P005 prêt (experiments/overreaction.py) : retournement après une bougie extrême (>= 2,5 écarts-types), forex + métaux,
+  15 min et 1 h, seuil 54,9 %. Lancer dans Colab après autolab.py (cache des bougies), puis python3 -m lab.handoff.
+- Lancer le test pré-enregistré sur de nouvelles données (plus de bougies) avant toute conclusion.
 - Momentum intraday indices 30 min / 1 h (seuil 54,9 %) : pas encore testé avec assez de données.
 - Contrats 1 jour : barrière à vérifier (longcode) avant tout calcul de gain.
 - Proposer la prochaine expérience à partir des résultats du journal ; ne pas répéter un test sans justification.
